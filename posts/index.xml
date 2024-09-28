@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/posts/</link>
+    <description>Recent content in Posts on sorg_dream&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Wed, 10 Jul 2024 08:27:11 +0800</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wifibox的配置与使用</title>
+      <link>https://blog.sorgdream.com/posts/wifibox/</link>
+      <pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
+      <guid>https://blog.sorgdream.com/posts/wifibox/</guid>
+      <description>最近几天，我在Redmi Book Pro 14s上安装了FreeBSD 14.1-RELEASE，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章&#xA;bhyve bhyve，发音为“beehive”，是 FreeBSD 的虚拟机管理程序 / 虚拟机管理器，支持带有“POPCNT”（POPulation Count）功能的 Intel 和 AMD 处理器上的多种客户操作系统，以及在实验中支持 gic0：ARM Generic Interrupt Controller v3.0 功能的 ARM64/aarch64 处理器&#xA;bhyve 支持多种存储和网络后端、UEFI、FreeBSD 加载器和 GRUB 启动、PCI 直通 (PPT)、集成 VNC 和 9pfs 服务器以及更多功能&#xA;Wifibox bhyve supports passing of host PCI devices to a virtual machine for its exclusive use of them.&#xA;Wifibox则是借助其PCI直通技术，部署了一个 Linux 客户机，借助 PCI 直通技术驱动 FreeBSD 主机系统上的无线网卡&#xA;Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察它的运行状态&#xA;配置 我的网卡是RTL8852be，用ifconfig查看只有一个设备，其ip为127.0.0.1，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动&#xA;安装 Wifibox 因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用ifconfig查看是否识别到设备ue0 1 dhclient ue0 # 获取ip 连接完后安装 Wifibox</description>
+    </item>
+    <item>
+      <title>RK-R98键盘开箱</title>
+      <link>https://blog.sorgdream.com/posts/r98-keyboard/</link>
+      <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/r98-keyboard/</guid>
+      <description>为什么要买这个键盘 因为刷b站的时候看到一个Cmake入门视频，讲的不错，通俗易懂，当然关键不在此，主要是想知道up的键盘，看见评论区有和我一样想法的，随即买了这款键盘&#xA;虽然笔记本的薄膜键盘不错，敲起来速度很快，但还是想体验下机械键盘的手感&#xA;至于为什么选择这个颜色&#xA;当然是别的颜色都没货(划掉)&#xA;主要配置 这里只列出了我买的，其他的自己上京东看吧&#xA;连接方式 有线/2.4G/蓝牙 键帽 PBT原厂拼色 轴体 烟雨轴/TTC钢铁轴 声音包 PORON棉/ixpe轴下垫/底棉/硅胶 PCBA 单键开槽 电池 7200MA锂电池 结构 Gasket结构(软弹型) 插拔 全键轴座插拔 卫星轴 R87卫星轴(升级款) 京东原价259,减了20&#xA;轴体 一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了&#xA;轴体 压力克数 触发行程 触底行程 纯净轴 42±5g 2.0±0.4mm 3,7±0.4mm 雪皇轴 45±10gf 2.0±0.4mm 3.4±0.4mm 烟雨轴PRO 40±10gf 2.0±0.4mm 3.4±0.4mm 钢铁轴PRO 41±10gf 1.4±0.4mm 3.8±0.3mm 兼容性 实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是6.7.4-arch1-1&#xA;物流 不得不吐槽一下极兔的物流速度，虽然是春节，但也不用发个键盘都要走5天，从花都到钟村足足用了一天&amp;hellip;&#xA;还好键盘是安全送到了&#xA;一些题外话 估计是中考前最后一篇文章了，等中考完再回来给大家更新&#xA;回老家四天没碰电脑，不知不觉就攒了90多个包，不得不说开了多线程的pacman很快&#xA;前几天想整理下文章目录，因为busuanzi和twikoo是和文章链接绑定的，导致阅读量和评论都没了，还好发现的及时😭</description>
+    </item>
+    <item>
+      <title>Pigo实现人脸识别</title>
+      <link>https://blog.sorgdream.com/posts/pigo-face/</link>
+      <pubDate>Wed, 31 Jan 2024 12:34:05 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/pigo-face/</guid>
+      <description>最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版&#xA;使用 从Releases处下载对应系统的二进制&#xA;下载facefinder&#xA;1 ./pigo -in input.png -out out.png &amp;lt; input/source.jpg -cf=/path/to/cascade 即可识别input.png，并输出output.png&#xA;预览图 识别视频 因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的&#xA;下载视频 B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能&#xA;到Android设备&#xA;1 /storage/emulated/0/Android/data/com.bilibili.app.in/download/ 目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个.xml,.json结尾的文件&#xA;进入数字文件夹，需要的两个文件出现了，audio.m4s为音频文件，video.m4s为视频文件，将音频拓展名重命名为*.mp3，视频为*.mp4，移动到任意剪辑软件能读取的目录&#xA;将两个文件导入剪辑软件，将视频和音频同步拖到对应轨道，导出即可&#xA;切割视频 这里博主使用的工具是FFmpeg&#xA;最好创建一个专门的文件夹存放输出的图片&#xA;A complete, cross-platform solution to record, convert and stream audio and video.&#xA;使用ffmpeg -i lockHand.mp4 -r 24 ./lockHand/output%d.png 以每秒24张图片分解视频&#xA;-i: 指定分割的视频&#xA;-r: 设置帧率，默认为25&#xA;output%d.png中%d是占位符，ffmpeg将以1.2.3&amp;hellip;的顺序命名输出文件&#xA;完成后，到lockHand目录下即可看到输出的图片&#xA;批量识别 一个18秒，24帧的视频就需要432张图片，这么多图片难不成要我们手动一张张识别？估计得识别到地球爆炸;像我这么懒的人肯定不会这么做，我决定用一个脚本来替我完成这项艰巨的任务&#xA;1 2 3 4 5 6 7 #!/bin/bash for((i=1;i&amp;lt;=422;i++)); do ./pigo -in ./lockHand/output$i.png -out ./outHand/out$i.png -cf .</description>
+    </item>
+    <item>
+      <title>Frp自建内网穿透</title>
+      <link>https://blog.sorgdream.com/posts/nat-traversal/</link>
+      <pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/nat-traversal/</guid>
+      <description>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制&#xA;想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了&#xA;frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred&#xA;网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试&#xA;安装&amp;amp;使用 frp的安装很简单，参照文档的教程&#xA;到Releases处下载适合的架构/系统的压缩包，解压到任意目录&#xA;使用./frps -c ./frps.toml启动服务端&#xA;使用./frpc -c ./frpc.toml启动客户端&#xA;使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启&#xA;(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令&#xA;1 2 3 4 5 6 7 8 9 10 # 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可</description>
+    </item>
+    <item>
+      <title>Arch下的Kde配置</title>
+      <link>https://blog.sorgdream.com/posts/arch-kde/</link>
+      <pubDate>Sun, 14 Jan 2024 09:21:23 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/arch-kde/</guid>
+      <description>2024年的第一篇文章，祝大家新年快乐(虽然有点迟了)&#xA;这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11&#xA;起因 逛B站时偶然看到了有人发Hyprland的配置，再看我的Kde瞬间就不香了&#xA;拿出我珍藏多年的Arch Live CD ，F12选择U盘启动，在经过一系列分区，生成fstab，引导后，成功来到了熟悉的tty界面，接下来照着B站的教程，开始安装Hyprland&#xA;Hyprland Hyprland is a highly customizable dynamic tiling Wayland compositor that doesn&amp;rsquo;t sacrifice on its looks.&#xA;Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺牲其外观。&#xA;安装 首先安装Wayland 1 pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland 安装Hyprland 1 paru -S hyprland-bin 复制配置文件 1 2 mkdir -pv ~/.config/hypr sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/ Hyprland启动 通过编辑~/.bash_profile启动(不使用显示管理器)&#xA;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 启动 wayland 桌面前设置一些环境变量 function set_wayland_env { cd ${HOME} # 设置语言环境为中文 export LANG=zh_CN.</description>
+    </item>
+    <item>
+      <title>将你的博客部署到雨云</title>
+      <link>https://blog.sorgdream.com/posts/winter/</link>
+      <pubDate>Fri, 17 Nov 2023 18:48:10 +0800</pubDate>
+      <guid>https://blog.sorgdream.com/posts/winter/</guid>
+      <description>近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了&#xA;这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天&#xA;看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到&#xA;每日一滚&#xA;1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面&#xA;Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起&#xA;在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来&#xA;1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示&#xA;在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客&#xA;https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了&#xA;ssl证书 阿里云现有免费的一年ssl证书可以申请&#xA;阿里云证书现只有三个月有效期，遂更换cerbot自动续费&#xA;在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可</description>
+    </item>
+    <item>
+      <title>博客迁移至hugo</title>
+      <link>https://blog.sorgdream.com/posts/hugo/</link>
+      <pubDate>Sun, 05 Nov 2023 13:23:01 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/hugo/</guid>
+      <description>前几天，因为一个主题，我把博客从hexo换成hugo，也就是现在看到的&#xA;迁移 hugo的操作比hexo要难，热门程度也不及hexo，所以遇到一些问题需要自己解决&#xA;安装 用sudo apt install git安装git 到All releases找到Linux下载go 用以下命令提取下载的archive 1 rm -rf /usr/local/go &amp;amp;&amp;amp; tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz 编辑/etc/profile(系统范围安装)，添加环境变量 1 export PATH=$PATH:/usr/local/go/bin 完成后使用source /etc/profile即可完成安装&#xA;使用sudo apt install snapd安装snap&#xA;使用sudo snap install dart-sass安装dart-sass&#xA;使用sudo snap install hugo安装hugo&#xA;建站 三连快速创建&#xA;1 2 3 hugo new site &amp;lt;sitename&amp;gt; cd &amp;lt;sitename&amp;gt; git init 这时候可以下载你喜欢的主题了，编辑hugo.toml，添加theme = &amp;quot;themename&amp;quot;指定主题&#xA;基础 基础的指令和hexo差不多，不过原本的source变成了content，使用hexo server即可 如果提示由于本地 development 环境的限制， 评论系统 , CDN 和 fingerprint 不会在 development 环境下启用。，使用hugo server -e production更改环境即可</description>
+    </item>
+    <item>
+      <title>Icarus主题下的配置</title>
+      <link>https://blog.sorgdream.com/posts/upyun/</link>
+      <pubDate>Fri, 06 Oct 2023 18:21:00 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/upyun/</guid>
+      <description>&lt;h2 id=&#34;题外话&#34;&gt;题外话&lt;/h2&gt;&#xA;&lt;p&gt;久违地打开了VScode写起了文章，不得不说，用VScode来写MarkDown是真的方便，装个插件就可以预览了&lt;/p&gt;&#xA;&lt;h2 id=&#34;icarus主题&#34;&gt;Icarus主题&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;回到正题&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;因为Keep老出问题，于是，在几天前，我将主题更换为BUtterfly，可配置的选项非常多，整体美观度也非常不错；看似一切都很完美，&lt;del&gt;那就没有这篇文章了&lt;/del&gt;&lt;/p&gt;&#xA;&lt;p&gt;可是有一个缺点，就是加载的速度太慢了，除了必要的头像等，已经尽力让网站不出现图片，但首次加载仍需2～5秒的时间，如果刚好网不好，那就至少得8秒以上了。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;其实早在几天前，我就开始申请又拍云联盟了，但因为网站访问时间太长，审核误认为无法访问给拒了&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;办法当然有，最好的方法就是换主题，前一段时候用的next主题就不错，黑白色调，除了图片其他的都不用怎么加载&lt;/p&gt;&#xA;&lt;p&gt;于是我&lt;del&gt;又&lt;/del&gt;换主题了，这次是有6K star的Icarus主题，整体看着也很不错，也没什么图片需要加载的&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Next主题进阶配置</title>
+      <link>https://blog.sorgdream.com/posts/next/</link>
+      <pubDate>Sun, 17 Sep 2023 12:21:23 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/next/</guid>
+      <description>&lt;p&gt;最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>家庭网络优化</title>
+      <link>https://blog.sorgdream.com/posts/ipv6/</link>
+      <pubDate>Wed, 23 Aug 2023 18:21:00 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/ipv6/</guid>
+      <description>&lt;h2 id=&#34;开启ipv6&#34;&gt;开启IPV6&lt;/h2&gt;&#xA;&lt;p&gt;上一篇文章用开发板搭建了alist，mc服务器，但没有公网ip，只能局域网下访问，我当然不能忍，这篇文章讲述我如何获取公网ipv6和踩的一些坑&lt;/p&gt;&#xA;&lt;h3 id=&#34;光猫配置&#34;&gt;光猫配置&lt;/h3&gt;&#xA;&lt;p&gt;首先进入光猫的后台，我的猫是华为的老东西了，用普通的账号&lt;code&gt;root&lt;/code&gt;密码&lt;code&gt;admin&lt;/code&gt;进是能进去，但是很多设置只能看，改不了，于是我查遍bing，终于找到了适合我的超级管理员密码，大家可以试试&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;账号:telecomadmin&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;密码:admintelecom&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;输入密码进入后台，找到&lt;code&gt;wan&lt;/code&gt;设置，把路由器的wan改为&lt;code&gt;桥接&lt;/code&gt;，并把&lt;strong&gt;ipv4&lt;/strong&gt;改为&lt;code&gt;ipv4/ipv6&lt;/code&gt;如果是灰色的不能更改，请按下面的步骤设置，以chrome为例&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux下的各种shell</title>
+      <link>https://blog.sorgdream.com/posts/shell/</link>
+      <pubDate>Sat, 19 Aug 2023 21:34:04 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/shell/</guid>
+      <description>&lt;p&gt;安装完linux要干什么？ 当然是美化一下终端啦&lt;/p&gt;&#xA;&lt;h2 id=&#34;fish&#34;&gt;FIsh&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>hexo建立个人博客并部署到GitHub</title>
+      <link>https://blog.sorgdream.com/posts/hexo/</link>
+      <pubDate>Sat, 12 Aug 2023 08:21:23 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/hexo/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;&#xA;&lt;p&gt;hexo是什么&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;fluid是什么&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Fluid 是基于 Hexo 的一款 Material Design 风格的主题&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>google/bing收录</title>
+      <link>https://blog.sorgdream.com/posts/google.bing/</link>
+      <pubDate>Fri, 11 Aug 2023 12:22:12 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/google.bing/</guid>
+      <description>&lt;p&gt;博客目前已被bing和google收录，bing的点击率比google要多，我们的&lt;del&gt;网站真是蒸蒸日上&lt;/del&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>香橙派zero3</title>
+      <link>https://blog.sorgdream.com/posts/orangepi/</link>
+      <pubDate>Thu, 10 Aug 2023 18:21:22 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/orangepi/</guid>
+      <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&lt;thead&gt;&#xA;&lt;tr&gt;&#xA;&lt;th&gt;CPU&lt;/th&gt;&#xA;&lt;th&gt;全志H618高性能四核Cortex-A53处理器 1.5GHz&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/thead&gt;&#xA;&lt;tbody&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;GPU&lt;/td&gt;&#xA;&lt;td&gt;Mali G31 MP2&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;RAM&lt;/td&gt;&#xA;&lt;td&gt;1GB/1.5GB/2GB/4GB LPDDR4&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;储存&lt;/td&gt;&#xA;&lt;td&gt;16MB SPI Flash&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;板载WiFi+蓝牙&lt;/td&gt;&#xA;&lt;td&gt;WiFi5和蓝牙5.0&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;网络&lt;/td&gt;&#xA;&lt;td&gt;10M/100M/1000M以太网接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;音频输入、输出&lt;/td&gt;&#xA;&lt;td&gt;13Pin扩展端口支持2路输出1路输入&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;视频输出&lt;/td&gt;&#xA;&lt;td&gt;Micro HDMI支持4K@60fps&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;USB&lt;/td&gt;&#xA;&lt;td&gt;USB 2.0 x 3（需搭配扩展版）&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;SD卡接口&lt;/td&gt;&#xA;&lt;td&gt;Micro SD&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;电源输入&lt;/td&gt;&#xA;&lt;td&gt;5V3A，Type-c接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;拓展接口&lt;/td&gt;&#xA;&lt;td&gt;26Pin GPIO接口 &amp;amp;&amp;amp; 13Pin GPIO接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;因为原本买它是用来搭建mc服务器的，所以ram选择4g版&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KernelSU内核编译</title>
+      <link>https://blog.sorgdream.com/posts/kernelsu/</link>
+      <pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/kernelsu/</guid>
+      <description>&lt;h2 id=&#34;环境搭建&#34;&gt;环境搭建&lt;/h2&gt;&#xA;&lt;p&gt;搭建编译所需的环境&lt;/p&gt;&#xA;&lt;h3 id=&#34;系统安装&#34;&gt;系统安装&lt;/h3&gt;&#xA;&lt;p&gt;教程基于ubuntu，你可以选择实机安装或者使用wsl2,如何安装请看&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install&#34;&gt;使用 WSL 在 Windows 上安装 Linux&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;注：wsl将系统各盘挂载至&lt;code&gt;/mnt&lt;/code&gt;目录，通过此挂载点可以实现文件传输&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>手机终端termux</title>
+      <link>https://blog.sorgdream.com/posts/termux/</link>
+      <pubDate>Sat, 05 Aug 2023 17:32:03 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/termux/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Termux 是一款Android 终端模拟器和 Linux 环境应用程序，无需 root 或设置即可直接运行。自动安装最小的基本系统 - 使用 APT 包管理器可以使用其他包。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;&#xA;&lt;p&gt;你可以在&lt;a href=&#34;https://github.com/termux/termux-app&#34;&gt;Github&lt;/a&gt;和&lt;a href=&#34;https://f-droid.org/zh_Hans/packages/com.termux/&#34;&gt;F-Droid&lt;/a&gt;找到安装包&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;但我并不推荐你安装github或play商店上的termux，因为一些拓展程序是分版本的，你在github上下的用不了f-droid商店上的拓展，而play商店上的拓展是要花钱的，所以我推荐都在F-Droid上下载&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
