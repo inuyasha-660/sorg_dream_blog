@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/tags/go/</link>
+    <description>Recent content in Go on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Wed, 31 Jan 2024 12:34:05 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pigo实现人脸识别</title>
+      <link>https://blog.sorgdream.com/posts/pigo-face/</link>
+      <pubDate>Wed, 31 Jan 2024 12:34:05 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/pigo-face/</guid>
+      <description>最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版&#xA;使用 从Releases处下载对应系统的二进制&#xA;下载facefinder&#xA;1 ./pigo -in input.png -out out.png &amp;lt; input/source.jpg -cf=/path/to/cascade 即可识别input.png，并输出output.png&#xA;预览图 识别视频 因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的&#xA;下载视频 B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能&#xA;到Android设备&#xA;1 /storage/emulated/0/Android/data/com.bilibili.app.in/download/ 目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个.xml,.json结尾的文件&#xA;进入数字文件夹，需要的两个文件出现了，audio.m4s为音频文件，video.m4s为视频文件，将音频拓展名重命名为*.mp3，视频为*.mp4，移动到任意剪辑软件能读取的目录&#xA;将两个文件导入剪辑软件，将视频和音频同步拖到对应轨道，导出即可&#xA;切割视频 这里博主使用的工具是FFmpeg&#xA;最好创建一个专门的文件夹存放输出的图片&#xA;A complete, cross-platform solution to record, convert and stream audio and video.&#xA;使用ffmpeg -i lockHand.mp4 -r 24 ./lockHand/output%d.png 以每秒24张图片分解视频&#xA;-i: 指定分割的视频&#xA;-r: 设置帧率，默认为25&#xA;output%d.png中%d是占位符，ffmpeg将以1.2.3&amp;hellip;的顺序命名输出文件&#xA;完成后，到lockHand目录下即可看到输出的图片&#xA;批量识别 一个18秒，24帧的视频就需要432张图片，这么多图片难不成要我们手动一张张识别？估计得识别到地球爆炸;像我这么懒的人肯定不会这么做，我决定用一个脚本来替我完成这项艰巨的任务&#xA;1 2 3 4 5 6 7 #!/bin/bash for((i=1;i&amp;lt;=422;i++)); do ./pigo -in ./lockHand/output$i.png -out ./outHand/out$i.png -cf .</description>
+    </item>
+  </channel>
+</rss>

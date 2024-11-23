@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发板 on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/</link>
+    <description>Recent content in 开发板 on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Wed, 23 Aug 2023 18:21:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>家庭网络优化</title>
+      <link>https://blog.sorgdream.com/posts/ipv6/</link>
+      <pubDate>Wed, 23 Aug 2023 18:21:00 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/ipv6/</guid>
+      <description>&lt;h2 id=&#34;开启ipv6&#34;&gt;开启IPV6&lt;/h2&gt;&#xA;&lt;p&gt;上一篇文章用开发板搭建了alist，mc服务器，但没有公网ip，只能局域网下访问，我当然不能忍，这篇文章讲述我如何获取公网ipv6和踩的一些坑&lt;/p&gt;&#xA;&lt;h3 id=&#34;光猫配置&#34;&gt;光猫配置&lt;/h3&gt;&#xA;&lt;p&gt;首先进入光猫的后台，我的猫是华为的老东西了，用普通的账号&lt;code&gt;root&lt;/code&gt;密码&lt;code&gt;admin&lt;/code&gt;进是能进去，但是很多设置只能看，改不了，于是我查遍bing，终于找到了适合我的超级管理员密码，大家可以试试&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;账号:telecomadmin&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;密码:admintelecom&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;输入密码进入后台，找到&lt;code&gt;wan&lt;/code&gt;设置，把路由器的wan改为&lt;code&gt;桥接&lt;/code&gt;，并把&lt;strong&gt;ipv4&lt;/strong&gt;改为&lt;code&gt;ipv4/ipv6&lt;/code&gt;如果是灰色的不能更改，请按下面的步骤设置，以chrome为例&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>香橙派zero3</title>
+      <link>https://blog.sorgdream.com/posts/orangepi/</link>
+      <pubDate>Thu, 10 Aug 2023 18:21:22 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/orangepi/</guid>
+      <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&lt;thead&gt;&#xA;&lt;tr&gt;&#xA;&lt;th&gt;CPU&lt;/th&gt;&#xA;&lt;th&gt;全志H618高性能四核Cortex-A53处理器 1.5GHz&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/thead&gt;&#xA;&lt;tbody&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;GPU&lt;/td&gt;&#xA;&lt;td&gt;Mali G31 MP2&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;RAM&lt;/td&gt;&#xA;&lt;td&gt;1GB/1.5GB/2GB/4GB LPDDR4&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;储存&lt;/td&gt;&#xA;&lt;td&gt;16MB SPI Flash&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;板载WiFi+蓝牙&lt;/td&gt;&#xA;&lt;td&gt;WiFi5和蓝牙5.0&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;网络&lt;/td&gt;&#xA;&lt;td&gt;10M/100M/1000M以太网接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;音频输入、输出&lt;/td&gt;&#xA;&lt;td&gt;13Pin扩展端口支持2路输出1路输入&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;视频输出&lt;/td&gt;&#xA;&lt;td&gt;Micro HDMI支持4K@60fps&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;USB&lt;/td&gt;&#xA;&lt;td&gt;USB 2.0 x 3（需搭配扩展版）&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;SD卡接口&lt;/td&gt;&#xA;&lt;td&gt;Micro SD&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;电源输入&lt;/td&gt;&#xA;&lt;td&gt;5V3A，Type-c接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;拓展接口&lt;/td&gt;&#xA;&lt;td&gt;26Pin GPIO接口 &amp;amp;&amp;amp; 13Pin GPIO接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;因为原本买它是用来搭建mc服务器的，所以ram选择4g版&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

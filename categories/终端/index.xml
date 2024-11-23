@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>终端 on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/categories/%E7%BB%88%E7%AB%AF/</link>
+    <description>Recent content in 终端 on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Sat, 05 Aug 2023 17:32:03 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/categories/%E7%BB%88%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>手机终端termux</title>
+      <link>https://blog.sorgdream.com/posts/termux/</link>
+      <pubDate>Sat, 05 Aug 2023 17:32:03 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/termux/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Termux 是一款Android 终端模拟器和 Linux 环境应用程序，无需 root 或设置即可直接运行。自动安装最小的基本系统 - 使用 APT 包管理器可以使用其他包。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;&#xA;&lt;p&gt;你可以在&lt;a href=&#34;https://github.com/termux/termux-app&#34;&gt;Github&lt;/a&gt;和&lt;a href=&#34;https://f-droid.org/zh_Hans/packages/com.termux/&#34;&gt;F-Droid&lt;/a&gt;找到安装包&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;但我并不推荐你安装github或play商店上的termux，因为一些拓展程序是分版本的，你在github上下的用不了f-droid商店上的拓展，而play商店上的拓展是要花钱的，所以我推荐都在F-Droid上下载&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

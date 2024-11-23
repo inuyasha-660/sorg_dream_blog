@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html><head>
+<title>Next主题进阶配置</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="Next主题友链及其他配置">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://blog.sorgdream.com/avatar.jpg">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/friends">
+                    Friends
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about">
+                    About
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#next%e4%b8%bb%e9%a2%98" class="nav-next主题">
+									Next主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%af%84%e8%ae%ba" class="nav-评论">
+									评论
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#utterances" class="nav-utterances">
+									utterances
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%96%87%e7%ab%a0%e5%85%b3%e9%97%ad%e8%af%84%e8%ae%ba" class="nav-文章关闭评论">
+									文章关闭评论
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8b%e9%93%be" class="nav-友链">
+									友链
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%9a%8f%e7%ac%94" class="nav-随笔">
+									随笔
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%9f%9f%e5%90%8d%e7%bb%91%e5%ae%9a" class="nav-域名绑定">
+									域名绑定
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#google%e6%94%b6%e5%bd%95" class="nav-google收录">
+									Google收录
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e5%bc%95%e7%94%a8" class="nav-参考引用">
+									参考|引用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.sorgdream.com/">
+            sorg_dream&#39;s blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.sorgdream.com/">
+        <div class="single-column-header-title">sorg_dream&#39;s blog</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Next主题进阶配置
+                    
+                    <div class="post-subtitle">
+                        Next主题友链及其他配置
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2023-09-17 12:21
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/hexo">hexo</a>
+                                &nbsp;
+                        
+
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            11 min
+                            
+                            39 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录</p>
+<h2 id="next主题">Next主题</h2>
+<blockquote>
+<p>🎉 Elegant and powerful theme for Hexo.</p>
+</blockquote>
+<p>一个黑白为主色调的主题，很多人使用，却没有一个完整的中文教程；你能在Github上搜到三个next</p>
+<ul>
+<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">theme-hexo/hexo-theme-next</a></li>
+<li><a href="https://github.com/iissnan/hexo-theme-next">iissnan</a></li>
+</ul>
+<p>我推荐使用第一个，也就是<strong>hexo-theme/hex-theme-next</strong> 因为讨论的人多，版本也是最新的
+<!-- raw HTML omitted -->目前next还没有一个统一的教程，网上也有三篇不同的教程</p>
+<ul>
+<li><a href="https://hexo-next.readthedocs.io/zh_CN/latest/">Hexo-Next</a>优点是支持中文，比较完善，缺点是没有官方内容多</li>
+<li><a href="http://theme-next.iissnan.com/">Next使用文档</a>同样支持中文，但是覆盖和内容没有上一个全</li>
+<li><a href="https://theme-next.js.org/">Next</a>应该是官方文档，覆盖最全，但不支持中文</li>
+</ul>
+<p>以上三个文档建议第一和第三混合看，第二个因为有点过时可以不看</p>
+<h3 id="评论">评论</h3>
+<p>一个好的博客必定不能缺少评论系统，目前有许多解决方案可供选择，但我认为最方便，快捷的还是<a href="https://utteranc.es/">utterances</a></p>
+<h4 id="utterances">utterances</h4>
+<blockquote>
+<p>A lightweight comments widget built on GitHub issues.</p>
+</blockquote>
+<ul>
+<li>以下以utt来代替utterances</li>
+</ul>
+<p>作者尝试在butterfly主题中使用valine，但最终以失败告终，尝试gitalk同样因token被墙而失败，最后发现了这个宝藏评论系统</p>
+<ol>
+<li>要使用utt，我们首先要创建一个仓库，必须要是公开的，然后我们需要安装<a href="https://github.com/apps/utterances"> utterances app</a>到我们的仓库</li>
+<li>然后到了选择Blog Post ↔️ Issue Mapping 推荐<strong>Issue title contains page title</strong> 不容易混淆</li>
+<li>最后编辑Next的<code>_config.yml</code>中的<strong>utterances</strong></li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#e06c75">utterances</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#e06c75">enable</span>: <span style="color:#e5c07b">true</span>   <span style="color:#7f848e">#将false改为true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e06c75">repo</span>: user-name/repo-name <span style="color:#7f848e"># 填入自己的仓库</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#7f848e"># Available values: pathname | url | title | og:title</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e06c75">issue_term</span>: title  <span style="color:#7f848e">#设置为title</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#7f848e"># Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e06c75">theme</span>: github-light
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成后，使用<code>hexo s --debug</code>本地预览博客，看是否出现评论框</p>
+<h3 id="文章关闭评论">文章关闭评论</h3>
+<p>设置完后默认会在所有page开启评论，如果想关闭分类或关于里的评论，可以在index.md中设定<code>comments: false</code>即可关闭</p>
+<h3 id="友链">友链</h3>
+<p>Next主题自带的友链位于侧边栏，但人数一旦多起来便会拥挤不堪，于是参考<a href="https://blog.fufu.ink/2023/05/improvefdlinks.html#waline">浮生若梦</a>的教程 <del>在他的基础上删去了过期和推荐</del> 大佬更新了配置，现在可以直接从yml读取配置</p>
+<blockquote>
+<p>又更新了
+之前要看 html 代码、改源代码，太麻烦了。
+仿照 butterfly 的友链书写方式做成变量都从 yml 中读取了</p>
+</blockquote>
+<ol>
+<li>首先在你<code>Next文件夹/layout</code>中创建一个名为<code>links.njk</code>的文件，写入以下内容</li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">107
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>    {<span style="color:#7f848e">##################}</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#7f848e">### LINKS BLOCK ###}</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#7f848e">##################}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">style</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    @<span style="color:#e06c75">media</span> (<span style="color:#e5c07b">min</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">width</span>: <span style="color:#d19a66">768</span><span style="color:#e06c75">px</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#56b6c2">.</span><span style="color:#e06c75">link</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">card</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">width</span>: <span style="color:#d19a66">50</span><span style="color:#56b6c2">%</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#e06c75">float</span>: <span style="color:#e06c75">left</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">link</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">card</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">position</span>: <span style="color:#e06c75">relative</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e5c07b">min</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">height</span>: <span style="color:#d19a66">1</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">padding</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">right</span>: <span style="color:#d19a66">15</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">padding</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">left</span>: <span style="color:#d19a66">15</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">box</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">sizing</span>: <span style="color:#e06c75">border</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">box</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">link</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">user</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">list</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">margin</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">bottom</span>: <span style="color:#d19a66">5</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">border</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">radius</span>: <span style="color:#d19a66">3</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">padding</span>: <span style="color:#d19a66">15</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">display</span>: <span style="color:#e06c75">block</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">box</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">shadow</span>: <span style="color:#d19a66">0</span> <span style="color:#d19a66">2</span><span style="color:#e06c75">px</span> <span style="color:#d19a66">6</span><span style="color:#e06c75">px</span> <span style="color:#e06c75">rgba</span>(<span style="color:#d19a66">0</span>,<span style="color:#d19a66">0</span>,<span style="color:#d19a66">0</span>,<span style="color:#56b6c2">.</span><span style="color:#d19a66">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">position</span>: <span style="color:#e06c75">relative</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">link</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">user</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">list</span>:<span style="color:#e06c75">hover</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">background</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">color</span>: <span style="color:#7f848e">#f6f8f8;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">text</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">decoration</span>: <span style="color:#e06c75">none</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#7f848e">#link-container a{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">border</span>: <span style="color:#e06c75">none</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">user</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">avatar</span> <span style="color:#e06c75">img</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">border</span>: <span style="color:#d19a66">2</span><span style="color:#e06c75">px</span> <span style="color:#e06c75">solid</span> <span style="color:#7f848e">#fff;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">height</span>: <span style="color:#e06c75">auto</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">vertical</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">align</span>: <span style="color:#e06c75">middle</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">width</span>: <span style="color:#d19a66">100</span><span style="color:#56b6c2">%</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">border</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">radius</span>: <span style="color:#d19a66">20</span><span style="color:#56b6c2">%</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e5c07b">max</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">width</span>: <span style="color:#d19a66">100</span><span style="color:#56b6c2">%!</span><span style="color:#e06c75">important</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">margin</span>: <span style="color:#d19a66">0</span><span style="color:#e06c75">px</span> <span style="color:#56b6c2">!</span><span style="color:#e06c75">important</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">clearfix</span>:<span style="color:#e06c75">after</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">content</span>: <span style="color:#98c379">&#39; &#39;</span>; 
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">display</span>: <span style="color:#e06c75">block</span>; 
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">height</span>: <span style="color:#d19a66">0</span>; 
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">clear</span>: <span style="color:#e06c75">both</span>; 
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">visibility</span>: <span style="color:#e06c75">hidden</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">text</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">ellipsis</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">display</span>: <span style="color:#e06c75">block</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">text</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">overflow</span>: <span style="color:#e06c75">ellipsis</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">overflow</span>: <span style="color:#e06c75">hidden</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">white</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">space</span>: <span style="color:#e06c75">nowrap</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">font</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">size</span>: <span style="color:#d19a66">13</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">user</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">message</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">display</span>: <span style="color:#e06c75">block</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">overflow</span>: <span style="color:#e06c75">hidden</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">user</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">description</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">color</span>: <span style="color:#7f848e">#a0a0a0;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">.</span><span style="color:#e06c75">user</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">avatar</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">display</span>: <span style="color:#e06c75">inline</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">block</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">width</span>: <span style="color:#d19a66">52</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">height</span>: <span style="color:#e06c75">auto</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">float</span>: <span style="color:#e06c75">left</span> <span style="color:#56b6c2">!</span><span style="color:#e06c75">important</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">margin</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">right</span>: <span style="color:#d19a66">15</span><span style="color:#e06c75">px</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">position</span>: <span style="color:#e06c75">relative</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e06c75">white</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">space</span>: <span style="color:#e06c75">nowrap</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">style</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">div</span> <span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;link-container&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#c678dd">for</span> <span style="color:#e06c75">link_config</span> <span style="color:#56b6c2">in</span> <span style="color:#e06c75">site</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">data</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">links</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#c678dd">if</span> <span style="color:#e06c75">link_config</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">class_name</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">h2</span> <span style="color:#e06c75">id</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;{{ link_config.class_name }}&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">a</span> <span style="color:#e06c75">href</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;#{{ link_config.class_name }}&#34;</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;headerlink&#34;</span> <span style="color:#e06c75">title</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;{{ link_config.class_name }}&#34;</span> <span style="color:#e06c75">data</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">pjax</span><span style="color:#56b6c2">-</span><span style="color:#e06c75">state</span><span style="color:#56b6c2">&gt;&lt;/</span><span style="color:#e06c75">a</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>        {{ <span style="color:#e06c75">link_config</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">class_name</span> }}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">h2</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#c678dd">else</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">hr</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#e06c75">endif</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">div</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;clearfix&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#c678dd">for</span> <span style="color:#e06c75">link</span> <span style="color:#56b6c2">in</span> <span style="color:#e06c75">link_config</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">link_list</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">div</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;link-card&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">a</span> <span style="color:#e06c75">href</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;{{ link.site }}&#34;</span> <span style="color:#e06c75">target</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;_blank&#34;</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;link-user-list&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">span</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;user-avatar&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">img</span> <span style="color:#e06c75">src</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;{{ link.avatar }}&#34;</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;nofancybox&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">span</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">span</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;user-message&#34;</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">span</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;text-ellipsis&#34;</span><span style="color:#56b6c2">&gt;</span>{{ <span style="color:#e06c75">link</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">nickname</span> }}<span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">span</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">span</span> <span style="color:#c678dd">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;user-description text-ellipsis&#34;</span><span style="color:#56b6c2">&gt;</span>{{ <span style="color:#e06c75">link</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">info</span> }}<span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">span</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">span</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">a</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">div</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#e06c75">endfor</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">div</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#56b6c2">%</span> <span style="color:#e06c75">endfor</span> <span style="color:#56b6c2">%</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;</span><span style="color:#e06c75">div</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {{ <span style="color:#e06c75">page</span><span style="color:#56b6c2">.</span><span style="color:#e06c75">content</span> }}
+</span></span><span style="display:flex;"><span>    <span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">div</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#56b6c2">&lt;/</span><span style="color:#e06c75">div</span><span style="color:#56b6c2">&gt;</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#7f848e">######################}</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#7f848e">### END LINKS BLOCK ###}</span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#7f848e">######################}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后再打开<code>Next文件夹/layout/page.njk</code> ，在<code>block title</code>区域中的<code>{{- __('title.schedule') + page_title_suffix }}</code>后面添加上两行</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{% block title %}
+</span></span><span style="display:flex;"><span>  {%- set page_title_suffix = &#39; | &#39; + title %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  {%- if page.type === &#39;categories&#39; and not page.title %}
+</span></span><span style="display:flex;"><span>    {{- __(&#39;title.category&#39;) + page_title_suffix }}
+</span></span><span style="display:flex;"><span>  {%- elif page.type === &#39;tags&#39; and not page.title %}
+</span></span><span style="display:flex;"><span>    {{- __(&#39;title.tag&#39;) + page_title_suffix }}
+</span></span><span style="display:flex;"><span>  {%- elif page.type === &#39;schedule&#39; and not page.title %}
+</span></span><span style="display:flex;"><span>    {{- __(&#39;title.schedule&#39;) + page_title_suffix }}
+</span></span><span style="display:flex;"><span>+  {%- elif page.type === &#39;links&#39; and not page.title %}
+</span></span><span style="display:flex;"><span>+    {{- __(&#39;title.links&#39;) + page_title_suffix }}
+</span></span><span style="display:flex;"><span>  {%- else %}
+</span></span><span style="display:flex;"><span>    {{- page.title + page_title_suffix }}
+</span></span><span style="display:flex;"><span>  {%- endif %}
+</span></span><span style="display:flex;"><span>{% endblock %}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来在下面的<code>PAGE BODY</code>中添加</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{### PAGE BODY ###}
+</span></span><span style="display:flex;"><span>      {#################}
+</span></span><span style="display:flex;"><span>      &lt;div class=&#34;post-body{% if page.direction and page.direction.toLowerCase() === &#39;rtl&#39; %} rtl{% endif %}&#34;&gt;
+</span></span><span style="display:flex;"><span>        {%- if page.type === &#39;tags&#39; %}
+</span></span><span style="display:flex;"><span>          {%- include &#39;_partials/page/tags.njk&#39; -%}
+</span></span><span style="display:flex;"><span>        {% elif page.type === &#39;categories&#39; %}
+</span></span><span style="display:flex;"><span>          {%- include &#39;_partials/page/categories.njk&#39; -%}
+</span></span><span style="display:flex;"><span>        {% elif page.type === &#39;schedule&#39; %}
+</span></span><span style="display:flex;"><span>          {%- include &#39;_partials/page/schedule.njk&#39; -%}
+</span></span><span style="display:flex;"><span>+        {% elif page.type === &#39;links&#39; %}
+</span></span><span style="display:flex;"><span>+          {%- include &#39;links.njk&#39; -%}
+</span></span><span style="display:flex;"><span>        {% else %}
+</span></span><span style="display:flex;"><span>          {{ page.content }}
+</span></span><span style="display:flex;"><span>        {%- endif %}
+</span></span><span style="display:flex;"><span>      &lt;/div&gt;
+</span></span><span style="display:flex;"><span>      {#####################}
+</span></span><span style="display:flex;"><span>      {### END PAGE BODY ###}
+</span></span><span style="display:flex;"><span>      {#####################}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来和创建tags、about页一样，使用<code>hexo new page links</code>创建一个新页面，修改<code>index.md</code>添加申请信息和其他你想写在友链里的，设置type为links</p>
+<p>最后在<code>hexo/source/</code>创建一个目录<code>_data</code>，里面再创建一个<code>links.yml</code>文件并填入以下内容</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">29
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#7f848e"># 参数说明</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># nickname 博客名称</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># site 博客地址</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># info 博客简介</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># avatar 博客logo</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 填写时注意缩进！</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#e06c75">class_name</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#e06c75">link_list</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#e06c75">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">avatar</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#e06c75">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">avatar</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#e06c75">class_name</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#e06c75">link_list</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#e06c75">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">avatar</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#e06c75">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#e06c75">avatar</span>:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后找到<strong>Menu</strong>区域，按照格式增加一个友链页面；完成后找到<code>languages/zh-CN.yml</code>，在Menu区域中添加友链的汉化</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#e06c75">links</span>: 友链
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可完成配置，以后想增加友链只需要在<code>_config.yml</code>中增添信息即可</p>
+<h3 id="随笔">随笔</h3>
+<p>有时我们可能想说点什么，但太短了成不了文章，于是我打算创建一个随笔页，专门记录短篇的文章</p>
+<ol>
+<li>使用<code>hexo new page essay</code>创建一个随笔页</li>
+<li>修改<code>source/essay/index.md</code>里的内容，修改标题并添加上<code>type: essay</code></li>
+<li>在主题配置文件中的<strong>Menu</strong>区域添加上随笔页</li>
+<li>在<code>languages/zh-CN.yml</code>中添加友链的翻译即可</li>
+</ol>
+<p>之后我们就可以在index.md中写文章了，但是看空想大佬的说说比我要好看，大佬没公布教程，我也没敢直接要，只能用折中的办法了</p>
+<h2 id="域名绑定">域名绑定</h2>
+<p>因为.xyz续费太贵，本身对这个域名也不是很满意，于是，一天前，我重新注册了一个新的域名<code>inuya.ltd</code>，并将他与我的博客绑定</p>
+<ol>
+<li>要绑定域名，我们首先设置一个CNAME解析，将它指向原本的博客链接，再设置一个AAAA，通过<code>ping username.github.io</code>获取ipv6地址</li>
+<li>然后在你博客的<code>source</code>目录创建一个名为<code>CNAME</code>的文件，填入你的域名</li>
+<li>在你的设置中找到page/Custom domain，填入你的域名，点击save即可</li>
+</ol>
+<p>设置完后使用原本的username.github.io会重定向到你的网站；尝试用你的域名访问，看能否访问成功</p>
+<h2 id="google收录">Google收录</h2>
+<p>因为next的配置里带有收录的配置，所以我们只要选择HTML标记
+<!-- raw HTML omitted -->将<code>content=</code>后面的内容复制到主题<code>_config.yml</code>中的<code>google_site_verification:</code></p>
+<p>然后再使用<code>hexo clean &amp;&amp; hexo g</code> <code>hexo d</code>部署到Github即可完成验证，bing同理</p>
+<h2 id="参考引用">参考|引用</h2>
+<ul>
+<li><a href="https://blog.csdn.net/Mancuojie/article/details/119906071">【Hexo】域名绑定篇</a></li>
+<li><a href="https://blog.fufu.ink/2023/05/improvefdlinks.html">空想笔记</a></li>
+</ul>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2023-09-17</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/upyun/">
+			Next<br>Icarus主题下的配置
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/about/">
+			Previous<br>README
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.sorgdream.com/">
+    
+        <div class="nav-title">
+            sorg_dream&#39;s blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/friends">
+                Friends
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about">
+                About
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	sorgDream CC BY-NC-SA 4.0
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#next%e4%b8%bb%e9%a2%98" class="nav-next主题">
+									Next主题
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e8%af%84%e8%ae%ba" class="nav-评论">
+									评论
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#utterances" class="nav-utterances">
+									utterances
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e6%96%87%e7%ab%a0%e5%85%b3%e9%97%ad%e8%af%84%e8%ae%ba" class="nav-文章关闭评论">
+									文章关闭评论
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%8b%e9%93%be" class="nav-友链">
+									友链
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%9a%8f%e7%ac%94" class="nav-随笔">
+									随笔
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%9f%9f%e5%90%8d%e7%bb%91%e5%ae%9a" class="nav-域名绑定">
+									域名绑定
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#google%e6%94%b6%e5%bd%95" class="nav-google收录">
+									Google收录
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83%e5%bc%95%e7%94%a8" class="nav-参考引用">
+									参考|引用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	sorgDream CC BY-NC-SA 4.0
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

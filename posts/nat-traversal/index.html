@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html><head>
+<title>Frp自建内网穿透</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="使用Frp为家庭网络配置内网穿透">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<link rel="icon" href="https://blog.sorgdream.com/avatar.jpg">
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    Archive
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    Tags
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    Categories
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/friends">
+                    Friends
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS Feed
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/about">
+                    About
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#frp" class="nav-frp">
+									frp
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85%e4%bd%bf%e7%94%a8" class="nav-安装使用">
+									安装&amp;使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8-systemd-%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af%e5%8a%a8" class="nav-使用-systemd-开机自启动">
+									使用 systemd 开机自启动
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae" class="nav-配置">
+									配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#nginx%e9%85%8d%e7%bd%ae" class="nav-nginx配置">
+									Nginx配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%8e%bb%e7%ab%af%e5%8f%a3%e8%ae%bf%e9%97%ae" class="nav-去端口访问">
+									去端口访问
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#https" class="nav-https">
+									HTTPS
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e5%ba%8a" class="nav-图床">
+									图床
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%96%87%e4%bb%b6%e5%bc%95%e7%b4%a2" class="nav-文件引索">
+									文件引索
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b5%8c%e5%85%a5%e5%bc%95%e7%b4%a2" class="nav-嵌入引索">
+									嵌入引索
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%be%8e%e5%8c%96%e5%bc%95%e7%b4%a2" class="nav-美化引索">
+									美化引索
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%a1%a5%e5%85%85" class="nav-补充">
+									补充
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://blog.sorgdream.com/">
+            sorg_dream&#39;s blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://blog.sorgdream.com/">
+        <div class="single-column-header-title">sorg_dream&#39;s blog</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    Frp自建内网穿透
+                    
+                    <div class="post-subtitle">
+                        使用Frp为家庭网络配置内网穿透
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-01-22 18:20
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E5%9B%BE%E5%BA%8A">图床</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/%E5%9B%BE%E5%BA%8A">图床</a>
+                                &nbsp;
+                            
+                                <a href="/tags/linux">Linux</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            11 min
+                            
+                            48 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制</p>
+<p>想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了</p>
+<h2 id="frp">frp</h2>
+<p>提到内网穿透，想到的肯定是大名顶顶的<strong>frp</strong>，目前在Github上已有76.3K starred</p>
+<p>网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试</p>
+<h3 id="安装使用">安装&amp;使用</h3>
+<p>frp的安装很简单，参照<a href="https://gofrp.org/zh-cn/">文档</a>的教程</p>
+<ol>
+<li>
+<p>到<a href="https://github.com/fatedier/frp/releases/tag/v0.53.2">Releases</a>处下载适合的架构/系统的压缩包，解压到任意目录</p>
+</li>
+<li>
+<p>使用<code>./frps -c ./frps.toml</code>启动服务端</p>
+</li>
+<li>
+<p>使用<code>./frpc -c ./frpc.toml</code>启动客户端</p>
+</li>
+</ol>
+<h3 id="使用-systemd-开机自启动">使用 systemd 开机自启动</h3>
+<p>如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启</p>
+<ol>
+<li>(如果尚未安装)使用<code>apt install systemd </code>安装，其他发行版使用其包管理器即可</li>
+<li>编辑<code>/etc/systemd/system/frps.service</code>创建frp服务配置，写入以下内容</li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#c678dd">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 服务名称，可自定义</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">Description </span><span style="color:#56b6c2">=</span><span style="color:#98c379"> frp server</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">After </span><span style="color:#56b6c2">=</span><span style="color:#98c379"> network.target syslog.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">Wants </span><span style="color:#56b6c2">=</span><span style="color:#98c379"> network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">Type </span><span style="color:#56b6c2">=</span><span style="color:#98c379"> simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 启动frps的命令，需修改为您的frps的安装路径</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">ExecStart </span><span style="color:#56b6c2">=</span><span style="color:#98c379"> /path/to/frps -c /path/to/frps.toml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">WantedBy </span><span style="color:#56b6c2">=</span><span style="color:#98c379"> multi-user.target</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3.管理命令</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#7f848e"># 启动frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start frps
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 停止frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl stop frps
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 重启frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart frps
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 查看frp状态</span>
+</span></span><span style="display:flex;"><span>sudo systemctl status frps
+</span></span><span style="display:flex;"><span><span style="color:#7f848e"># 开机自启动</span>
+</span></span><span style="display:flex;"><span>sudo systemctl <span style="color:#e5c07b">enable</span> frps
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后的frpc也是大同小异，只需要更改名字和位置即可</p>
+<h3 id="配置">配置</h3>
+<p>重点来了，frp有两个配置，一个<code>frps.toml</code>用于服务端，一个<code>frpc.toml</code>用于客户端</p>
+<ol>
+<li>配置frps.toml</li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#e06c75">bindPort</span> = <span style="color:#d19a66">7000</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">vhostHTTPPort</span> = <span style="color:#d19a66">7890</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>bindPort</code>不用管，<code>vhostHTTPPort</code>为连接的端口，默认为8080,但端口被我的评论占用了，所以改成7890</p>
+<p>如像我这样，配置完后可以通过<code>http://www.yourdomain.com:7890</code>访问</p>
+<ol start="2">
+<li>配置frpc.toml</li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#e06c75">serverAddr</span> = <span style="color:#98c379">&#34;x.x.x.x&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">serverPort</span> = <span style="color:#d19a66">7000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#e06c75">proxies</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">name</span> = <span style="color:#98c379">&#34;image-hosting&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">type</span> = <span style="color:#98c379">&#34;http&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">localIP</span> = <span style="color:#98c379">&#34;192.168.xx.xxx&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">localPort</span> = <span style="color:#d19a66">7890</span>
+</span></span><span style="display:flex;"><span><span style="color:#e06c75">customDomains</span> = [<span style="color:#98c379">&#34;www.example.com&#34;</span>]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>serverAddr: 服务器IP</p>
+<p>name: 取一个好记的名字</p>
+<p>type: 因为要搭建网站所以选择http</p>
+<p>localIP: 本机IP</p>
+<p>localPort: 内网服务部署端口</p>
+<p>customDomains: 绑定的域名</p>
+<p>PS: 原本还有一个<code>remotePort = 6000</code>配置，看到文档没有就删了，实测没有影响</p>
+<p>将和 <a href="https://www.example.com">www.example.com</a> 的域名 A 记录解析到服务器的 IP 地址<code>x.x.x.x</code></p>
+<p>访问<code>www.example.com:7890</code>即可访问内网机器上的<code>7890</code>服务</p>
+<h3 id="nginx配置">Nginx配置</h3>
+<p>不得不说Nginx真是好用，配置方便，功能强大; 配置完frp,接下来就是nginx</p>
+<p>因为上面只进行了内网穿透，内网的机器还需要配置nginx来显示网站</p>
+<ol>
+<li>还没有安装的在等什么，使用<code>apt install nginx</code>安装nginx</li>
+<li>在<code>etc/nginx/conf.d/</code>文件夹内添加配置文件，文件名随意，以<code>.conf</code>作为拓展名</li>
+<li>增添配置，以下为我的配置</li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen 7890;
+</span></span><span style="display:flex;"><span>    server_name www.example.com;
+</span></span><span style="display:flex;"><span>    root /home/image-hosting;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fancyindex on;            
+</span></span><span style="display:flex;"><span>    fancyindex_exact_size off; 
+</span></span><span style="display:flex;"><span>    fancyindex_localtime on; 
+</span></span><span style="display:flex;"><span>    fancyindex_name_length 255; 
+</span></span><span style="display:flex;"><span>    fancyindex_time_format &#34;%Y-%m-%d %H:%M:%S&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    location / {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>listen: 监听7890端口</p>
+<p>server_name: 绑定的域名</p>
+<p>root: 网站所在文件夹</p>
+<p>以下配置开启文件引索，若无需求可以忽略</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> fancyindex on;            
+</span></span><span style="display:flex;"><span>    fancyindex_exact_size on; 
+</span></span><span style="display:flex;"><span>    fancyindex_localtime on; 
+</span></span><span style="display:flex;"><span>    fancyindex_name_length 255; 
+</span></span><span style="display:flex;"><span>    fancyindex_time_format &#34;%Y-%m-%d %H:%M:%S&#34;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再一次尝试访问<code>www.example.com:7890</code>查看是否正常显示</p>
+<h4 id="去端口访问">去端口访问</h4>
+<p>整天带端口访问太丑了，可以使用nginx的反向代理功能解决，原理就是在服务器上套层nginx，将<code>www.example.com</code>反向代理至<code>www.example.com:7890</code></p>
+<p>以下是我的配置</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen 80;
+</span></span><span style="display:flex;"><span>    server_name www.example.com; # 设置的域名
+</span></span><span style="display:flex;"><span>    location / {
+</span></span><span style="display:flex;"><span>             proxy_pass  http://www.example.com:7890; # 反向代理至8080端口
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置完尝试使用<code>www.example.com</code>访问</p>
+<h3 id="https">HTTPS</h3>
+<p>虽然现在已经可以较为优雅地访问了，但因为缺少ssl证书，每次访问都给我警告</p>
+<p>frp支持为本地 HTTP 服务启用 HTTPS，但需要自行下载证书到内网机器，而且无法使用像certbot这样的工具，所以我选择在服务器的Nginx配置证书</p>
+<p>关于如何获取证书，我的<a href="https://blog.inuya.ltd/posts/winter/">上上篇文章</a>已经讲的很清楚了，下面是我的配置</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen 80;
+</span></span><span style="display:flex;"><span>    server_name img.inuya.ltd; # 设置的域名
+</span></span><span style="display:flex;"><span>    location / {
+</span></span><span style="display:flex;"><span>             proxy_pass  http://img.inuya.ltd:7890; # 反向代理至7890端口
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen 443;
+</span></span><span style="display:flex;"><span>    server_name img.inuya.ltd;
+</span></span><span style="display:flex;"><span>    ssl_certificate /etc/letsencrypt/live/img.inuya.ltd/fullchain.pem;  # 配置证书
+</span></span><span style="display:flex;"><span>    ssl_certificate_key /etc/letsencrypt/live/img.inuya.ltd/privkey.pem;
+</span></span><span style="display:flex;"><span>    ssl_session_timeout 5m;
+</span></span><span style="display:flex;"><span>    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+</span></span><span style="display:flex;"><span>    # 表示使用的加密套件的类型。
+</span></span><span style="display:flex;"><span>    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # 表示使用的TLS协议的类型。
+</span></span><span style="display:flex;"><span>    ssl_prefer_server_ciphers on;
+</span></span><span style="display:flex;"><span>    location / {
+</span></span><span style="display:flex;"><span>            proxy_pass http://img.inuya.ltd:7890;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="图床">图床</h2>
+<p>搞定了内网穿透，但怎么把图片显示出来呢，1P面板有个图床的docker镜像，用了下感觉很一般，不如自己建一个</p>
+<p>因为没学过前端，所以只能边学边建，写出来的东西也是漏洞百出，但最起码能用了</p>
+<h3 id="文件引索">文件引索</h3>
+<p>原本是想写一个文件引索，看了几篇文章都是无从下手，偶然看到一篇关闭<code>Apache</code>默认文件引索功能的文章，想到Nginx是否也有这个功能，找了一下还真有，只不过需要手动开启</p>
+<p>在内网机器的nginx配置中添加以下内容</p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen  80;
+</span></span><span style="display:flex;"><span>    server_name 192.168.31.112;
+</span></span><span style="display:flex;"><span>    root /home/image-hosting;
+</span></span><span style="display:flex;"><span>    autoindex on;    	#启用或禁用目录列表输出
+</span></span><span style="display:flex;"><span>    autoindex_format html； #设置目录列表的格式
+</span></span><span style="display:flex;"><span>    autoindex_localtime on;  #指定目录列表中的时间是否应以本地时区或 UTC 输出
+</span></span><span style="display:flex;"><span>    autoindex_exact_size off;  #是否应在目录列表中输出确切的文件大小
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入一个网站目录，看是否能浏览文件</p>
+<h3 id="嵌入引索">嵌入引索</h3>
+<p>因索有了，但我不想手动一个个翻图片，于是将它嵌入到了我的主页</p>
+<p>在代码中添加<code>&lt;iframe&gt;</code>标签即可嵌入一个网页，因为我想显示<code>Images</code>目录的引索，所以src中填入了<code>images/</code></p>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#e06c75">div</span> <span style="color:#e06c75">class</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;div-pic&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">iframe</span> <span style="color:#e06c75">src</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;images/&#34;</span> <span style="color:#e06c75">width</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;100%&#34;</span> <span style="color:#e06c75">height</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;800px&#34;</span> <span style="color:#e06c75">scrolling</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;auto&#34;</span> <span style="color:#e06c75">framespacing</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;0&#34;</span> <span style="color:#e06c75">allowfullscreen</span><span style="color:#56b6c2">=</span><span style="color:#98c379">&#34;true&#34;</span>&gt; &lt;/<span style="color:#e06c75">iframe</span>&gt;   
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果想要更换嵌入的网站，只需要修改<code>src=&quot;&quot;</code> 里的内容为目标网址即可</p>
+<h4 id="美化引索">美化引索</h4>
+<p>但这样还有一个问题，默认的引索在网站的背景是透明的，导致看不清文件名，CSS添加的背景太亮了，又偶然看见一篇用第三方模块来美化的文章</p>
+<p><!-- raw HTML omitted -->使用<code>fancyindex</code>模块替代默认的引索，来达到美化的效果</p>
+<ol>
+<li><code>apt install libnginx-mod-http-fancyindex</code>安装模块</li>
+<li>修改/创建<code>/etc/nginx/conf.d/</code>下的配置，添加以下内容以开启引索</li>
+</ol>
+<div class="highlight"><div style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#55595f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#abb2bf;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen 80;
+</span></span><span style="display:flex;"><span>    server_name 192.168.31.112;
+</span></span><span style="display:flex;"><span>    root /home/image-hosting;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fancyindex on;            
+</span></span><span style="display:flex;"><span>    fancyindex_exact_size off; 
+</span></span><span style="display:flex;"><span>    fancyindex_localtime on; 
+</span></span><span style="display:flex;"><span>    fancyindex_name_length 255; 
+</span></span><span style="display:flex;"><span>    fancyindex_time_format &#34;%Y-%m-%d %H:%M:%S&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    location / {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>返回网站，刷新即可看到新样式</p>
+<p>fancyindex还有许多主题可选，如<a href="https://github.com/Naereen/Nginx-Fancyindex-Theme">Nginx-Fancyindex-Theme</a>和<a href="https://github.com/alehaa/nginx-fancyindex-flat-theme">nginx-fancyindex-flat-theme</a></p>
+<p>也可以用<code>fancyindex</code>加<code>theme</code>关键字在Guthub搜索其他主题</p>
+<h2 id="补充">补充</h2>
+<p>其实内网穿透这个想法很早就有了，但一直搁置到现在;未来可能还会把Twikoo评论也放到开发板上，还是要看评论的人多不多</p>
+<p>最后祝大家玩得开心</p>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://nginx.org/en/docs/http/ngx_http_autoindex_module.html">Module ngx_http_autoindex_module</a></li>
+<li><a href="https://gofrp.org/zh-cn/">frp</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">Last modified on 2024-01-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="/posts/pigo-face/">
+			Next<br>Pigo实现人脸识别
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/arch-kde/">
+			Previous<br>Arch下的Kde配置
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://blog.sorgdream.com/">
+    
+        <div class="nav-title">
+            sorg_dream&#39;s blog
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                Archive
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                Tags
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                Categories
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/friends">
+                Friends
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS Feed
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/about">
+                About
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	sorgDream CC BY-NC-SA 4.0
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- CATALOG -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#frp" class="nav-frp">
+									frp
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85%e4%bd%bf%e7%94%a8" class="nav-安装使用">
+									安装&amp;使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8-systemd-%e5%bc%80%e6%9c%ba%e8%87%aa%e5%90%af%e5%8a%a8" class="nav-使用-systemd-开机自启动">
+									使用 systemd 开机自启动
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae" class="nav-配置">
+									配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#nginx%e9%85%8d%e7%bd%ae" class="nav-nginx配置">
+									Nginx配置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%8e%bb%e7%ab%af%e5%8f%a3%e8%ae%bf%e9%97%ae" class="nav-去端口访问">
+									去端口访问
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#https" class="nav-https">
+									HTTPS
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%9b%be%e5%ba%8a" class="nav-图床">
+									图床
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e6%96%87%e4%bb%b6%e5%bc%95%e7%b4%a2" class="nav-文件引索">
+									文件引索
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%b5%8c%e5%85%a5%e5%bc%95%e7%b4%a2" class="nav-嵌入引索">
+									嵌入引索
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e7%be%8e%e5%8c%96%e5%bc%95%e7%b4%a2" class="nav-美化引索">
+									美化引索
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e8%a1%a5%e5%85%85" class="nav-补充">
+									补充
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e5%8f%82%e8%80%83" class="nav-参考">
+									参考
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	sorgDream CC BY-NC-SA 4.0
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>

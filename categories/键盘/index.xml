@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>键盘 on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/categories/%E9%94%AE%E7%9B%98/</link>
+    <description>Recent content in 键盘 on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Sat, 17 Feb 2024 12:01:02 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/categories/%E9%94%AE%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RK-R98键盘开箱</title>
+      <link>https://blog.sorgdream.com/posts/r98-keyboard/</link>
+      <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/r98-keyboard/</guid>
+      <description>为什么要买这个键盘 因为刷b站的时候看到一个Cmake入门视频，讲的不错，通俗易懂，当然关键不在此，主要是想知道up的键盘，看见评论区有和我一样想法的，随即买了这款键盘&#xA;虽然笔记本的薄膜键盘不错，敲起来速度很快，但还是想体验下机械键盘的手感&#xA;至于为什么选择这个颜色&#xA;当然是别的颜色都没货(划掉)&#xA;主要配置 这里只列出了我买的，其他的自己上京东看吧&#xA;连接方式 有线/2.4G/蓝牙 键帽 PBT原厂拼色 轴体 烟雨轴/TTC钢铁轴 声音包 PORON棉/ixpe轴下垫/底棉/硅胶 PCBA 单键开槽 电池 7200MA锂电池 结构 Gasket结构(软弹型) 插拔 全键轴座插拔 卫星轴 R87卫星轴(升级款) 京东原价259,减了20&#xA;轴体 一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了&#xA;轴体 压力克数 触发行程 触底行程 纯净轴 42±5g 2.0±0.4mm 3,7±0.4mm 雪皇轴 45±10gf 2.0±0.4mm 3.4±0.4mm 烟雨轴PRO 40±10gf 2.0±0.4mm 3.4±0.4mm 钢铁轴PRO 41±10gf 1.4±0.4mm 3.8±0.3mm 兼容性 实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是6.7.4-arch1-1&#xA;物流 不得不吐槽一下极兔的物流速度，虽然是春节，但也不用发个键盘都要走5天，从花都到钟村足足用了一天&amp;hellip;&#xA;还好键盘是安全送到了&#xA;一些题外话 估计是中考前最后一篇文章了，等中考完再回来给大家更新&#xA;回老家四天没碰电脑，不知不觉就攒了90多个包，不得不说开了多线程的pacman很快&#xA;前几天想整理下文章目录，因为busuanzi和twikoo是和文章链接绑定的，导致阅读量和评论都没了，还好发现的及时😭</description>
+    </item>
+  </channel>
+</rss>

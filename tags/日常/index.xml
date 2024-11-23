@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日常 on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/tags/%E6%97%A5%E5%B8%B8/</link>
+    <description>Recent content in 日常 on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Sat, 17 Feb 2024 12:01:02 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/tags/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RK-R98键盘开箱</title>
+      <link>https://blog.sorgdream.com/posts/r98-keyboard/</link>
+      <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/r98-keyboard/</guid>
+      <description>为什么要买这个键盘 因为刷b站的时候看到一个Cmake入门视频，讲的不错，通俗易懂，当然关键不在此，主要是想知道up的键盘，看见评论区有和我一样想法的，随即买了这款键盘&#xA;虽然笔记本的薄膜键盘不错，敲起来速度很快，但还是想体验下机械键盘的手感&#xA;至于为什么选择这个颜色&#xA;当然是别的颜色都没货(划掉)&#xA;主要配置 这里只列出了我买的，其他的自己上京东看吧&#xA;连接方式 有线/2.4G/蓝牙 键帽 PBT原厂拼色 轴体 烟雨轴/TTC钢铁轴 声音包 PORON棉/ixpe轴下垫/底棉/硅胶 PCBA 单键开槽 电池 7200MA锂电池 结构 Gasket结构(软弹型) 插拔 全键轴座插拔 卫星轴 R87卫星轴(升级款) 京东原价259,减了20&#xA;轴体 一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了&#xA;轴体 压力克数 触发行程 触底行程 纯净轴 42±5g 2.0±0.4mm 3,7±0.4mm 雪皇轴 45±10gf 2.0±0.4mm 3.4±0.4mm 烟雨轴PRO 40±10gf 2.0±0.4mm 3.4±0.4mm 钢铁轴PRO 41±10gf 1.4±0.4mm 3.8±0.3mm 兼容性 实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是6.7.4-arch1-1&#xA;物流 不得不吐槽一下极兔的物流速度，虽然是春节，但也不用发个键盘都要走5天，从花都到钟村足足用了一天&amp;hellip;&#xA;还好键盘是安全送到了&#xA;一些题外话 估计是中考前最后一篇文章了，等中考完再回来给大家更新&#xA;回老家四天没碰电脑，不知不觉就攒了90多个包，不得不说开了多线程的pacman很快&#xA;前几天想整理下文章目录，因为busuanzi和twikoo是和文章链接绑定的，导致阅读量和评论都没了，还好发现的及时😭</description>
+    </item>
+    <item>
+      <title>将你的博客部署到雨云</title>
+      <link>https://blog.sorgdream.com/posts/winter/</link>
+      <pubDate>Fri, 17 Nov 2023 18:48:10 +0800</pubDate>
+      <guid>https://blog.sorgdream.com/posts/winter/</guid>
+      <description>近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了&#xA;这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天&#xA;看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到&#xA;每日一滚&#xA;1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面&#xA;Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起&#xA;在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来&#xA;1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示&#xA;在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客&#xA;https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了&#xA;ssl证书 阿里云现有免费的一年ssl证书可以申请&#xA;阿里云证书现只有三个月有效期，遂更换cerbot自动续费&#xA;在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可</description>
+    </item>
+  </channel>
+</rss>

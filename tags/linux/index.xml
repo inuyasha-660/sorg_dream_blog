@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/tags/linux/</link>
+    <description>Recent content in Linux on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Wed, 31 Jan 2024 12:34:05 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pigo实现人脸识别</title>
+      <link>https://blog.sorgdream.com/posts/pigo-face/</link>
+      <pubDate>Wed, 31 Jan 2024 12:34:05 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/pigo-face/</guid>
+      <description>最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版&#xA;使用 从Releases处下载对应系统的二进制&#xA;下载facefinder&#xA;1 ./pigo -in input.png -out out.png &amp;lt; input/source.jpg -cf=/path/to/cascade 即可识别input.png，并输出output.png&#xA;预览图 识别视频 因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的&#xA;下载视频 B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能&#xA;到Android设备&#xA;1 /storage/emulated/0/Android/data/com.bilibili.app.in/download/ 目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个.xml,.json结尾的文件&#xA;进入数字文件夹，需要的两个文件出现了，audio.m4s为音频文件，video.m4s为视频文件，将音频拓展名重命名为*.mp3，视频为*.mp4，移动到任意剪辑软件能读取的目录&#xA;将两个文件导入剪辑软件，将视频和音频同步拖到对应轨道，导出即可&#xA;切割视频 这里博主使用的工具是FFmpeg&#xA;最好创建一个专门的文件夹存放输出的图片&#xA;A complete, cross-platform solution to record, convert and stream audio and video.&#xA;使用ffmpeg -i lockHand.mp4 -r 24 ./lockHand/output%d.png 以每秒24张图片分解视频&#xA;-i: 指定分割的视频&#xA;-r: 设置帧率，默认为25&#xA;output%d.png中%d是占位符，ffmpeg将以1.2.3&amp;hellip;的顺序命名输出文件&#xA;完成后，到lockHand目录下即可看到输出的图片&#xA;批量识别 一个18秒，24帧的视频就需要432张图片，这么多图片难不成要我们手动一张张识别？估计得识别到地球爆炸;像我这么懒的人肯定不会这么做，我决定用一个脚本来替我完成这项艰巨的任务&#xA;1 2 3 4 5 6 7 #!/bin/bash for((i=1;i&amp;lt;=422;i++)); do ./pigo -in ./lockHand/output$i.png -out ./outHand/out$i.png -cf .</description>
+    </item>
+    <item>
+      <title>Frp自建内网穿透</title>
+      <link>https://blog.sorgdream.com/posts/nat-traversal/</link>
+      <pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/nat-traversal/</guid>
+      <description>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制&#xA;想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了&#xA;frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred&#xA;网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试&#xA;安装&amp;amp;使用 frp的安装很简单，参照文档的教程&#xA;到Releases处下载适合的架构/系统的压缩包，解压到任意目录&#xA;使用./frps -c ./frps.toml启动服务端&#xA;使用./frpc -c ./frpc.toml启动客户端&#xA;使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启&#xA;(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令&#xA;1 2 3 4 5 6 7 8 9 10 # 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可</description>
+    </item>
+    <item>
+      <title>Arch下的Kde配置</title>
+      <link>https://blog.sorgdream.com/posts/arch-kde/</link>
+      <pubDate>Sun, 14 Jan 2024 09:21:23 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/arch-kde/</guid>
+      <description>2024年的第一篇文章，祝大家新年快乐(虽然有点迟了)&#xA;这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11&#xA;起因 逛B站时偶然看到了有人发Hyprland的配置，再看我的Kde瞬间就不香了&#xA;拿出我珍藏多年的Arch Live CD ，F12选择U盘启动，在经过一系列分区，生成fstab，引导后，成功来到了熟悉的tty界面，接下来照着B站的教程，开始安装Hyprland&#xA;Hyprland Hyprland is a highly customizable dynamic tiling Wayland compositor that doesn&amp;rsquo;t sacrifice on its looks.&#xA;Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺牲其外观。&#xA;安装 首先安装Wayland 1 pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland 安装Hyprland 1 paru -S hyprland-bin 复制配置文件 1 2 mkdir -pv ~/.config/hypr sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/ Hyprland启动 通过编辑~/.bash_profile启动(不使用显示管理器)&#xA;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 启动 wayland 桌面前设置一些环境变量 function set_wayland_env { cd ${HOME} # 设置语言环境为中文 export LANG=zh_CN.</description>
+    </item>
+    <item>
+      <title>将你的博客部署到雨云</title>
+      <link>https://blog.sorgdream.com/posts/winter/</link>
+      <pubDate>Fri, 17 Nov 2023 18:48:10 +0800</pubDate>
+      <guid>https://blog.sorgdream.com/posts/winter/</guid>
+      <description>近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了&#xA;这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天&#xA;看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到&#xA;每日一滚&#xA;1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面&#xA;Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起&#xA;在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来&#xA;1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示&#xA;在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客&#xA;https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了&#xA;ssl证书 阿里云现有免费的一年ssl证书可以申请&#xA;阿里云证书现只有三个月有效期，遂更换cerbot自动续费&#xA;在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可</description>
+    </item>
+    <item>
+      <title>Linux下的各种shell</title>
+      <link>https://blog.sorgdream.com/posts/shell/</link>
+      <pubDate>Sat, 19 Aug 2023 21:34:04 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/shell/</guid>
+      <description>&lt;p&gt;安装完linux要干什么？ 当然是美化一下终端啦&lt;/p&gt;&#xA;&lt;h2 id=&#34;fish&#34;&gt;FIsh&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>香橙派zero3</title>
+      <link>https://blog.sorgdream.com/posts/orangepi/</link>
+      <pubDate>Thu, 10 Aug 2023 18:21:22 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/orangepi/</guid>
+      <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;&lt;thead&gt;&#xA;&lt;tr&gt;&#xA;&lt;th&gt;CPU&lt;/th&gt;&#xA;&lt;th&gt;全志H618高性能四核Cortex-A53处理器 1.5GHz&lt;/th&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/thead&gt;&#xA;&lt;tbody&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;GPU&lt;/td&gt;&#xA;&lt;td&gt;Mali G31 MP2&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;RAM&lt;/td&gt;&#xA;&lt;td&gt;1GB/1.5GB/2GB/4GB LPDDR4&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;储存&lt;/td&gt;&#xA;&lt;td&gt;16MB SPI Flash&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;板载WiFi+蓝牙&lt;/td&gt;&#xA;&lt;td&gt;WiFi5和蓝牙5.0&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;网络&lt;/td&gt;&#xA;&lt;td&gt;10M/100M/1000M以太网接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;音频输入、输出&lt;/td&gt;&#xA;&lt;td&gt;13Pin扩展端口支持2路输出1路输入&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;视频输出&lt;/td&gt;&#xA;&lt;td&gt;Micro HDMI支持4K@60fps&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;USB&lt;/td&gt;&#xA;&lt;td&gt;USB 2.0 x 3（需搭配扩展版）&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;SD卡接口&lt;/td&gt;&#xA;&lt;td&gt;Micro SD&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;电源输入&lt;/td&gt;&#xA;&lt;td&gt;5V3A，Type-c接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;tr&gt;&#xA;&lt;td&gt;拓展接口&lt;/td&gt;&#xA;&lt;td&gt;26Pin GPIO接口 &amp;amp;&amp;amp; 13Pin GPIO接口&lt;/td&gt;&#xA;&lt;/tr&gt;&#xA;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;因为原本买它是用来搭建mc服务器的，所以ram选择4g版&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KernelSU内核编译</title>
+      <link>https://blog.sorgdream.com/posts/kernelsu/</link>
+      <pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/kernelsu/</guid>
+      <description>&lt;h2 id=&#34;环境搭建&#34;&gt;环境搭建&lt;/h2&gt;&#xA;&lt;p&gt;搭建编译所需的环境&lt;/p&gt;&#xA;&lt;h3 id=&#34;系统安装&#34;&gt;系统安装&lt;/h3&gt;&#xA;&lt;p&gt;教程基于debian，你可以选择实机安装或者使用wsl2,如何安装请看&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install&#34;&gt;使用 WSL 在 Windows 上安装 Linux&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;注：wsl将系统各盘挂载至&lt;code&gt;/mnt&lt;/code&gt;目录，通过此挂载点可以实现文件传输&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>手机终端termux</title>
+      <link>https://blog.sorgdream.com/posts/termux/</link>
+      <pubDate>Sat, 05 Aug 2023 17:32:03 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/termux/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Termux 是一款Android 终端模拟器和 Linux 环境应用程序，无需 root 或设置即可直接运行。自动安装最小的基本系统 - 使用 APT 包管理器可以使用其他包。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;&#xA;&lt;p&gt;你可以在&lt;a href=&#34;https://github.com/termux/termux-app&#34;&gt;Github&lt;/a&gt;和&lt;a href=&#34;https://f-droid.org/zh_Hans/packages/com.termux/&#34;&gt;F-Droid&lt;/a&gt;找到安装包&lt;/p&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;但我并不推荐你安装github或play商店上的termux，因为一些拓展程序是分版本的，你在github上下的用不了f-droid商店上的拓展，而play商店上的拓展是要花钱的，所以我推荐都在F-Droid上下载&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

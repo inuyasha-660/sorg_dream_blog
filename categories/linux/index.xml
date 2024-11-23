@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/categories/linux/</link>
+    <description>Recent content in Linux on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Sun, 14 Jan 2024 09:21:23 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch下的Kde配置</title>
+      <link>https://blog.sorgdream.com/posts/arch-kde/</link>
+      <pubDate>Sun, 14 Jan 2024 09:21:23 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/arch-kde/</guid>
+      <description>2024年的第一篇文章，祝大家新年快乐(虽然有点迟了)&#xA;这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11&#xA;起因 逛B站时偶然看到了有人发Hyprland的配置，再看我的Kde瞬间就不香了&#xA;拿出我珍藏多年的Arch Live CD ，F12选择U盘启动，在经过一系列分区，生成fstab，引导后，成功来到了熟悉的tty界面，接下来照着B站的教程，开始安装Hyprland&#xA;Hyprland Hyprland is a highly customizable dynamic tiling Wayland compositor that doesn&amp;rsquo;t sacrifice on its looks.&#xA;Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺牲其外观。&#xA;安装 首先安装Wayland 1 pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland 安装Hyprland 1 paru -S hyprland-bin 复制配置文件 1 2 mkdir -pv ~/.config/hypr sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/ Hyprland启动 通过编辑~/.bash_profile启动(不使用显示管理器)&#xA;1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 # 启动 wayland 桌面前设置一些环境变量 function set_wayland_env { cd ${HOME} # 设置语言环境为中文 export LANG=zh_CN.</description>
+    </item>
+    <item>
+      <title>Linux下的各种shell</title>
+      <link>https://blog.sorgdream.com/posts/shell/</link>
+      <pubDate>Sat, 19 Aug 2023 21:34:04 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/shell/</guid>
+      <description>&lt;p&gt;安装完linux要干什么？ 当然是美化一下终端啦&lt;/p&gt;&#xA;&lt;h2 id=&#34;fish&#34;&gt;FIsh&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

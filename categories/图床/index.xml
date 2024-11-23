@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图床 on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/categories/%E5%9B%BE%E5%BA%8A/</link>
+    <description>Recent content in 图床 on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Mon, 22 Jan 2024 18:20:30 +0000</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/categories/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frp自建内网穿透</title>
+      <link>https://blog.sorgdream.com/posts/nat-traversal/</link>
+      <pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/nat-traversal/</guid>
+      <description>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制&#xA;想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了&#xA;frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred&#xA;网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试&#xA;安装&amp;amp;使用 frp的安装很简单，参照文档的教程&#xA;到Releases处下载适合的架构/系统的压缩包，解压到任意目录&#xA;使用./frps -c ./frps.toml启动服务端&#xA;使用./frpc -c ./frpc.toml启动客户端&#xA;使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启&#xA;(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令&#xA;1 2 3 4 5 6 7 8 9 10 # 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可</description>
+    </item>
+    <item>
+      <title>Icarus主题下的配置</title>
+      <link>https://blog.sorgdream.com/posts/upyun/</link>
+      <pubDate>Fri, 06 Oct 2023 18:21:00 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/upyun/</guid>
+      <description>&lt;h2 id=&#34;题外话&#34;&gt;题外话&lt;/h2&gt;&#xA;&lt;p&gt;久违地打开了VScode写起了文章，不得不说，用VScode来写MarkDown是真的方便，装个插件就可以预览了&lt;/p&gt;&#xA;&lt;h2 id=&#34;icarus主题&#34;&gt;Icarus主题&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;回到正题&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;因为Keep老出问题，于是，在几天前，我将主题更换为BUtterfly，可配置的选项非常多，整体美观度也非常不错；看似一切都很完美，&lt;del&gt;那就没有这篇文章了&lt;/del&gt;&lt;/p&gt;&#xA;&lt;p&gt;可是有一个缺点，就是加载的速度太慢了，除了必要的头像等，已经尽力让网站不出现图片，但首次加载仍需2～5秒的时间，如果刚好网不好，那就至少得8秒以上了。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;其实早在几天前，我就开始申请又拍云联盟了，但因为网站访问时间太长，审核误认为无法访问给拒了&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;办法当然有，最好的方法就是换主题，前一段时候用的next主题就不错，黑白色调，除了图片其他的都不用怎么加载&lt;/p&gt;&#xA;&lt;p&gt;于是我&lt;del&gt;又&lt;/del&gt;换主题了，这次是有6K star的Icarus主题，整体看着也很不错，也没什么图片需要加载的&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

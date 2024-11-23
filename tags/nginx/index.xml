@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on sorg_dream&#39;s blog</title>
+    <link>https://blog.sorgdream.com/tags/nginx/</link>
+    <description>Recent content in Nginx on sorg_dream&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>sorgDream CC BY-NC-SA 4.0</copyright>
+    <lastBuildDate>Fri, 17 Nov 2023 18:48:10 +0800</lastBuildDate>
+    <atom:link href="https://blog.sorgdream.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将你的博客部署到雨云</title>
+      <link>https://blog.sorgdream.com/posts/winter/</link>
+      <pubDate>Fri, 17 Nov 2023 18:48:10 +0800</pubDate>
+      <guid>https://blog.sorgdream.com/posts/winter/</guid>
+      <description>近况 期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了&#xA;这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天&#xA;看了archlinux 简明指南的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到&#xA;每日一滚&#xA;1 sudo pacman -Syu 最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面&#xA;Nginx 原本想再水一篇，但想着也没什么好写的，就合并在一起&#xA;在你喜欢的目录创建用于存放博客的文件夹，将博客仓库git下来&#xA;1 2 3 4 5 6 7 server { listen 80; server_name test.inuya.ltd; root /home/blog; location / { } } 跟之前一样，在服务器/etc/nginx/conf.d目录下创建test.inuya.ltd.conf配置文件，写入以上内容，这里我用二级域名test.inuya.ltd演示&#xA;在域名提供商添加A类型解析，填入你的IP，使用http://test.inuya.ltd即可访问博客&#xA;https 配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了&#xA;ssl证书 阿里云现有免费的一年ssl证书可以申请&#xA;阿里云证书现只有三个月有效期，遂更换cerbot自动续费&#xA;在你的debian或基于debian的发行版上安装snap 1 sudo apt install snapd 安装cerbot snap包 1 sudo snap install --classic certbot 准备 Certbot 命令 1 sudo ln -s /snap 获取证书，这里选择手动配置 1 sudo certbot certonly --nginx 测试下自动续费 1 sudo certbot renew --dry-run 证书应位于/etc/letsencrypt/live在Nginx中填入即可</description>
+    </item>
+    <item>
+      <title>博客迁移至hugo</title>
+      <link>https://blog.sorgdream.com/posts/hugo/</link>
+      <pubDate>Sun, 05 Nov 2023 13:23:01 +0000</pubDate>
+      <guid>https://blog.sorgdream.com/posts/hugo/</guid>
+      <description>前几天，因为一个主题，我把博客从hexo换成hugo，也就是现在看到的&#xA;迁移 hugo的操作比hexo要难，热门程度也不及hexo，所以遇到一些问题需要自己解决&#xA;安装 go和hugo已经存档于主流发行版的软件源中，使用&#xA;1 2 3 4 5 6 7 8 # Debian系 sudo apt install golang hugo # Arch系 sudo pacman -S go hugo # Fedora sudo dnf install golang hugo 安装go和带拓展的hugo&#xA;更多安装说明请看 https://gohugo.io/installation/linux/&#xA;建站 三连快速创建&#xA;1 2 3 hugo new site &amp;lt;sitename&amp;gt; cd &amp;lt;sitename&amp;gt; git init 这时候可以下载你喜欢的主题了，编辑hugo.toml，添加theme = &amp;quot;themename&amp;quot;指定主题&#xA;基础 基础的指令和hexo差不多，不过原本的source变成了content，使用hexo server即可 如果提示由于本地 development 环境的限制， 评论系统 , CDN 和 fingerprint 不会在 development 环境下启用。，使用hugo server -e production更改环境即可</description>
+    </item>
+  </channel>
+</rss>
